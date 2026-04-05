@@ -1,0 +1,41 @@
+{
+  "problem_statement": "我们要不要在未来 12 个月内推出面向中小企业的 AI 协作产品？",
+  "decision_type": [
+    "strategy",
+    "product",
+    "brand",
+    "organization",
+    "engineering",
+    "capital"
+  ],
+  "time_horizon": "中期",
+  "background": [
+    "当前已有企业服务收入",
+    "团队 18 人",
+    "现金还能支撑 14 个月",
+    "现有产品留存一般",
+    "品牌认知弱"
+  ],
+  "success_definition": [
+    "在 12 个月内找到最值得押注的一条增长路径",
+    "避免在错误方向上耗尽团队与现金"
+  ],
+  "constraints": [
+    "现金跑道 14 个月",
+    "团队规模 18 人",
+    "不能同时开三条以上主线"
+  ],
+  "known_facts": [
+    "已有一定企业客户基础",
+    "当前产品的长期留存不强"
+  ],
+  "unknowns": [
+    "目标用户是否真的愿意迁移到 AI 协作产品",
+    "我们最强的差异化能力到底是产品、渠道还是交付"
+  ],
+  "selected_advisors": [],
+  "output_priority": [
+    "先判断是否值得做",
+    "再判断如果做，应该如何缩小切入口"
+  ]
+}

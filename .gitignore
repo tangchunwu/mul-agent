@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.pyc
+
+# Local run artifacts
+.claude/advisor-system/runs/
+
+# OS / editor
+.DS_Store
+Thumbs.db

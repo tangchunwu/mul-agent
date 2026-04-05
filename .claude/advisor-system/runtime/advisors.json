@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "advisors": [
+    {
+      "id": "drucker",
+      "name": "彼得·德鲁克",
+      "skill": "peter-drucker-perspective",
+      "role": "管理与组织顾问",
+      "domains": ["organization", "strategy"],
+      "ask_first": [
+        "真正需要完成的任务是什么",
+        "什么对组织整体是正确的",
+        "结果发生在组织外部的哪里"
+      ],
+      "blind_spots": [
+        "对品牌感知与审美细节不敏感",
+        "对极端增长型创业叙事天然保留"
+      ]
+    },
+    {
+      "id": "jobs",
+      "name": "史蒂夫·乔布斯",
+      "skill": "steve-jobs-perspective",
+      "role": "产品与体验顾问",
+      "domains": ["product", "brand"],
+      "ask_first": [
+        "最重要的体验是什么",
+        "什么必须被删掉",
+        "用户为什么要承受这份复杂"
+      ],
+      "blind_spots": [
+        "容易低估组织承受成本",
+        "对开放生态与妥协型方案容忍度低"
+      ]
+    },
+    {
+      "id": "hara",
+      "name": "原研哉",
+      "skill": "kenya-hara-perspective",
+      "role": "感知与品牌顾问",
+      "domains": ["brand", "product"],
+      "ask_first": [
+        "被忽略的感受是什么",
+        "什么信息太满了",
+        "用户是否有参与理解的空间"
+      ],
+      "blind_spots": [
+        "对财务与资本结构不敏感",
+        "容易被误用成纯视觉审美模板"
+      ]
+    },
+    {
+      "id": "munger",
+      "name": "查理·芒格",
+      "skill": "charlie-munger-perspective",
+      "role": "判断与反误判顾问",
+      "domains": ["strategy", "capital", "organization"],
+      "ask_first": [
+        "这件事最可能怎么失败",
+        "激励在把谁推向什么行为",
+        "哪些偏误正在叠加"
+      ],
+      "blind_spots": [
+        "可能低估品牌、情感和叙事的正向价值",
+        "风格容易过于冷硬"
+      ]
+    },
+    {
+      "id": "buffett",
+      "name": "沃伦·巴菲特",
+      "skill": "warren-buffett-perspective",
+      "role": "商业与资本配置顾问",
+      "domains": ["capital", "strategy"],
+      "ask_first": [
+        "这是不是一门好生意",
+        "我是否真的看得懂",
+        "每股价值会如何长期变化"
+      ],
+      "blind_spots": [
+        "对极早期探索和高不确定性下注通常偏保守",
+        "对审美与设计感知关注较少"
+      ]
+    },
+    {
+      "id": "musk",
+      "name": "埃隆·马斯克",
+      "skill": "elon-musk-perspective",
+      "role": "工程与极限推进顾问",
+      "domains": ["engineering", "product", "strategy"],
+      "ask_first": [
+        "真正的 bottleneck 是什么",
+        "哪个步骤可以被删掉",
+        "为什么不能快十倍"
+      ],
+      "blind_spots": [
+        "容易低估组织健康与外部性",
+        "高压推进有明显过冲风险"
+      ]
+    }
+  ]
+}

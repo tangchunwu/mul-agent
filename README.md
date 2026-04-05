@@ -50,13 +50,13 @@
 再运行：
 
 ```bash
+set OPENAI_API_KEY=你的密钥
 python .claude/advisor-system/cli.py init-request --output .claude/advisor-system/runs/my-request.json
-python .claude/advisor-system/cli.py prepare-run --input .claude/advisor-system/runs/my-request.json --run-dir .claude/advisor-system/runs/my-run
-python .claude/advisor-system/cli.py status --run-dir .claude/advisor-system/runs/my-run
+python .claude/advisor-system/cli.py run-all --input .claude/advisor-system/runs/my-request.json --run-dir .claude/advisor-system/runs/my-run
 ```
 
 ## 当前状态
 
 - 仓库已完成初始化
-- 还没有正式业务代码
-- 下一步建议实现真正的模型调用层，把顾问 prompt 自动发送给模型并回填结果
+- 已有真实模型调用层
+- 可以并行调用顾问并自动生成最终报告

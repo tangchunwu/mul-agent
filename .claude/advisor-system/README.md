@@ -164,11 +164,24 @@ python .claude/advisor-system/cli.py prepare-run --input .claude/advisor-system/
 - `advisor-outputs/*.json`
 - `request.normalized.json`
 
-### 4. 填写顾问输出
+### 4. 真实调用顾问模型
 
-把每位顾问的结果写回：
+先设置环境变量：
 
-- `advisor-outputs/<advisor>.json`
+```bash
+set OPENAI_API_KEY=你的密钥
+```
+
+然后执行：
+
+```bash
+python .claude/advisor-system/cli.py run-advisors --run-dir .claude/advisor-system/runs/my-run
+```
+
+这一步会并行调用已选顾问，并自动回填：
+
+- `advisor-outputs/*.json`
+- `api-responses/*.response.json`
 
 ### 5. 生成仲裁输入
 
@@ -181,11 +194,46 @@ python .claude/advisor-system/cli.py build-arbiter --run-dir .claude/advisor-sys
 - `artifacts/arbiter-input.json`
 - `artifacts/arbiter-prompt.md`
 
-### 6. 查看运行状态
+### 6. 真实调用仲裁模型
+
+```bash
+python .claude/advisor-system/cli.py run-arbiter --run-dir .claude/advisor-system/runs/my-run
+```
+
+会生成：
+
+- `artifacts/final-report.json`
+- `artifacts/final-report.md`
+- `api-responses/arbiter.response.json`
+
+### 7. 一键跑完整链路
+
+```bash
+python .claude/advisor-system/cli.py run-all --input .claude/advisor-system/runs/my-request.json --run-dir .claude/advisor-system/runs/my-run
+```
+
+### 8. 查看运行状态
 
 ```bash
 python .claude/advisor-system/cli.py status --run-dir .claude/advisor-system/runs/my-run
 ```
+
+## 运行参数
+
+- `OPENAI_API_KEY`
+  - 必填
+- `OPENAI_BASE_URL`
+  - 可选，默认 `https://api.openai.com/v1`
+- `MUL_AGENT_ADVISOR_MODEL`
+  - 可选，默认 `gpt-5.1`
+- `MUL_AGENT_ARBITER_MODEL`
+  - 可选，默认 `gpt-5.1`
+- `MUL_AGENT_REASONING_EFFORT`
+  - 可选，默认 `medium`
+- `MUL_AGENT_TIMEOUT`
+  - 可选，默认 `180`
+- `MUL_AGENT_MAX_WORKERS`
+  - 可选，默认 `6`
 
 ## 使用原则
 
@@ -196,13 +244,12 @@ python .claude/advisor-system/cli.py status --run-dir .claude/advisor-system/run
 
 ## 下一步
 
-如果要把这套骨架真正接到 agent 编排器里，建议再补两件事：
+建议继续补两件事：
 
-1. 一个执行脚本
-   - 读取问题包
-   - 并行调 6 个顾问
-   - 汇总 JSON 输出
-
-2. 一个评测集
+1. 一个评测集
    - 10 到 20 个真实决策问题
    - 用来对比单顾问、六顾问、六顾问+仲裁的效果差异
+
+2. 一个结果面板
+   - 对比各顾问分歧
+   - 回看历史 run
